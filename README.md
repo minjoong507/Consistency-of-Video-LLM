@@ -7,13 +7,13 @@
 - [ ] Release the dataset and code. Additionally, we will provide more evaluation results of Video-LLMs.
 
 ## Citation
-If you find our paper is useful in your work, please kindly consider to cite our paper.
+If you find our paper useful, please consider citing our paper.
 ```BibTeX
 @article{jung2024consistency,
-    title={On the Consistency of Video Large Language Models in Temporal Comprehension},
-    author={Minjoon Jung and Junbin Xiao and Byoung-Tak Zhang and Angela Yao},
-    journal={arXiv preprint arXiv:2411.12951},
-    year={2024}
+  title={On the Consistency of Video Large Language Models in Temporal Comprehension},
+  author={Jung, Minjoon and Xiao, Junbin and Zhang, Byoung-Tak and Yao, Angela},
+  journal={arXiv preprint arXiv:2411.12951},
+  year={2024}
 }
 ```
 ## Acknowledgement
