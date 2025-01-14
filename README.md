@@ -1,10 +1,15 @@
 # On the Consistency of Video Large Language Models in Temporal Comprehension
 
 [![arXiv](https://img.shields.io/badge/arXiv-2411.12951-b31b1b.svg)](https://arxiv.org/abs/2411.12951)
+<a href='https://huggingface.co/collections/mjjung/vtune-6785f253479b8563af533ffa'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Checkpoint-blue'></a>
 
 ## News
+- [x] **[2025.01.14]** We have released our four checkpoints using VTune: [VideoLLaMA-7B-Charades-VTune](https://huggingface.co/mjjung/VideoLLaMA-7B-Charades-VTune), [VideoLLaMA-7B-ActvityNet-VTune](https://huggingface.co/mjjung/VideoLLaMA-7B-ActivityNet-VTune), [TimeChat-7B-Charades-VTune](https://huggingface.co/mjjung/TimeChat-7B-Charades-VTune), [TimeChat-7B-ActvityNet-VTune](https://huggingface.co/mjjung/TimeChat-7B-ActivityNet-VTune). Additionally, checkpoints with naive fine-tuning: [VideoLLaMA-7B-Charades-FT](https://huggingface.co/mjjung/VideoLLAMA-7B-Charades-FT), [VideoLLaMA-7B-ActvityNet-FT](https://huggingface.co/mjjung/VideoLLaMA-7B-ActivityNet-FT), [TimeChat-7B-ActivityNet-FT](https://huggingface.co/mjjung/TimeChat-7B-ActivityNet-FT) have been released.
 - [x] **[2024.11.20]** Our paper has been released on arXiv.
-- [ ] Release the dataset and code. Additionally, we will provide more evaluation results of Video-LLMs.
+
+## Introduction
+![image](https://github.com/user-attachments/assets/cc7ba1a6-a7b5-4c87-88b5-471632fabbd1)
+- We study the model’s consistency in temporal comprehension by assessing whether its responses align with the initial grounding, using dedicated probes and datasets. We specifically focus on video temporal grounding, where the task involves identifying timestamps in a video that correspond to language queries.
 
 ## Citation
 If you find our paper useful, please consider citing our paper.
