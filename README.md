@@ -1,9 +1,11 @@
 # On the Consistency of Video Large Language Models in Temporal Comprehension
 
 [![arXiv](https://img.shields.io/badge/arXiv-2411.12951-b31b1b.svg)](https://arxiv.org/abs/2411.12951)
+<a href='https://huggingface.co/collections/mjjung/vtune-6785f253479b8563af533ffa'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-brown'></a>
 <a href='https://huggingface.co/collections/mjjung/vtune-6785f253479b8563af533ffa'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Checkpoint-blue'></a>
 
 ## News
+- [x] **[2025.01.15]** We are excited to share that our evaluation datasets, Charades-CON and ActivityNet-CON, are now available on Hugging Face! 🎉 Additionally, the training annotations for VTune have also been released. 
 - [x] **[2025.01.14]** We have released our four checkpoints using VTune: [VideoLLaMA-7B-Charades-VTune](https://huggingface.co/mjjung/VideoLLaMA-7B-Charades-VTune), [VideoLLaMA-7B-ActvityNet-VTune](https://huggingface.co/mjjung/VideoLLaMA-7B-ActivityNet-VTune), [TimeChat-7B-Charades-VTune](https://huggingface.co/mjjung/TimeChat-7B-Charades-VTune), [TimeChat-7B-ActvityNet-VTune](https://huggingface.co/mjjung/TimeChat-7B-ActivityNet-VTune). Additionally, checkpoints with naive fine-tuning: [VideoLLaMA-7B-Charades-FT](https://huggingface.co/mjjung/VideoLLAMA-7B-Charades-FT), [VideoLLaMA-7B-ActvityNet-FT](https://huggingface.co/mjjung/VideoLLaMA-7B-ActivityNet-FT), [TimeChat-7B-ActivityNet-FT](https://huggingface.co/mjjung/TimeChat-7B-ActivityNet-FT) have been released.
 - [x] **[2024.11.20]** Our paper has been released on arXiv.
 
