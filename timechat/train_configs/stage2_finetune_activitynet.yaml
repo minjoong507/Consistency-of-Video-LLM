@@ -1,4 +1,4 @@
-# Usage: torchrun --nproc_per_node=8 train.py --cfg-path train_configs/stage2_finetune_activitynet.yaml
+# Usage: torchrun --nproc_per_node=4 train.py --cfg-path train_configs/stage2_finetune_activitynet.yaml
 model:
   arch: timechat
   model_type: pretrain_llama_v2
@@ -9,10 +9,10 @@ model:
   # Q-Former
   num_query_token: 32
 
-  vit_model: "/data/mjjung/timechat/eva_vit_g.pth"
-  llama_model: "/data/mjjung/Video-LLaMA/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf/"
-  q_former_model: "/data/mjjung/timechat/instruct_blip_vicuna7b_trimmed.pth"
-  ckpt: "/data/mjjung/timechat/timechat_7b.pth"  # continue fine-tuning from TimeChat-7B ckpt
+  vit_model: "ckpt/timechat/eva_vit_g.pth"
+  llama_model: "ckpt/Video-LLaMA/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf/"
+  q_former_model: "ckpt/timechat/instruct_blip_vicuna7b_trimmed.pth"
+  ckpt: "ckpt/timechat_7b.pth"  # continue fine-tuning from TimeChat-7B ckpt
 
   # only train vision branch
   frozen_llama_proj: False
@@ -40,8 +40,8 @@ datasets:
   charades_instruct:
     data_type: video
     build_info:
-      anno_dir: "data/activitynet_filtered_qa_grounding.json"
-      videos_dir: "/data/video_datasets/"
+      anno_dir: "data/activitynet_for_VTune.json"
+      videos_dir: "data/"
     vis_processor:
       train:
         name: "alpro_video_train"
@@ -51,7 +51,7 @@ datasets:
       train:
         name: "blip_caption"
     num_video_query_token: 32
-    tokenizer_name: "/data/mjjung/Video-LLaMA/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf/"
+    tokenizer_name: "ckpt/Video-LLaMA/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf/"
     model_type: "llama_v2"
     num_frm: 96
     sample_type: 'rand'
@@ -68,15 +68,15 @@ run:
 
   weight_decay: 0.05
   max_epoch: 3
-  iters_per_epoch: 51377 # 12408 / 4
+  iters_per_epoch: 51377
   batch_size_train: 1
   batch_size_eval: 4
   num_workers: 4
-  warmup_steps: 20550 # 12408 / 4
+  warmup_steps: 25688
   accum_grad_iters: 4
 
   seed: 42
-  output_dir: "/data/mjjung/timechat/activitynet_vtune"
+  output_dir: "ckpt/timechat/activitynet_vtune"
 
   amp: True
   resume_ckpt_path: null

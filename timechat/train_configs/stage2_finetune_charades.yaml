@@ -7,10 +7,10 @@ model:
   # Q-Former
   num_query_token: 32
 
-  vit_model: "/data/mjjung/timechat/eva_vit_g.pth"
-  llama_model: "/data/mjjung/Video-LLaMA/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf/"
-  q_former_model: "/data/mjjung/timechat/instruct_blip_vicuna7b_trimmed.pth"
-  ckpt: "/data/mjjung/timechat/timechat_7b.pth"  # continue fine-tuning from TimeChat-7B ckpt
+  vit_model: "ckpt/timechat/eva_vit_g.pth"
+  llama_model: "ckpt/Video-LLaMA/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf/"
+  q_former_model: "ckpt/timechat/instruct_blip_vicuna7b_trimmed.pth"
+  ckpt: "ckpt/timechat/timechat_7b.pth"  # continue fine-tuning from TimeChat-7B ckpt
 
   # only train vision branch
   frozen_llama_proj: False
@@ -38,8 +38,8 @@ datasets:
   charades_instruct:
     data_type: video
     build_info:
-      anno_dir: "data/instruct_tvg_12.4k_charades.json"
-      videos_dir: "/data/video_datasets/"
+      anno_dir: "data/charades_for_VTune.json"
+      videos_dir: "data/"
     vis_processor:
       train:
         name: "alpro_video_train"
@@ -49,7 +49,7 @@ datasets:
       train:
         name: "blip_caption"
     num_video_query_token: 32
-    tokenizer_name: "/data/mjjung/Video-LLaMA/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf/"
+    tokenizer_name: "ckpt/Video-LLaMA/Video-LLaMA-2-7B-Finetuned/llama-2-7b-chat-hf/"
     model_type: "llama_v2"
     num_frm: 96
     sample_type: 'rand'
@@ -66,15 +66,15 @@ run:
 
   weight_decay: 0.05
   max_epoch: 3
-  iters_per_epoch: 3102 # 12408 / 4
+  iters_per_epoch: 24811
   batch_size_train: 1
   batch_size_eval: 4
   num_workers: 4
-  warmup_steps: 3102 # 12408 / 4
+  warmup_steps: 14916
   accum_grad_iters: 8
 
   seed: 42
-  output_dir: "/data/mjjung/timechat/train_stage2_charades"
+  output_dir: "ckpt/timechat/train_stage2_charades"
 
   amp: True
   resume_ckpt_path: null

@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45b63caa-5fbe-4fd3-bfce-05179c5a7683" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/eval_configs/timechat.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/timechat/eval_configs/timechat.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/eval_configs/timechat_nus.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_activitynet.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_activitynet.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_charades.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_charades.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_charades_ego.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_charades_ego_1st.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_charades_ego_grounding.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_charades_ego_grounding_1st.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_charades_ego_grounding_3rd.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_finetune_qvhighlights.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_naive_finetune_activitynet.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/timechat/train_configs/stage2_naive_finetune_charades.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +79,7 @@
       <workItem from="1732156776125" duration="1366000" />
       <workItem from="1732165352207" duration="238000" />
       <workItem from="1733549952334" duration="6000" />
-      <workItem from="1742858799309" duration="3781000" />
+      <workItem from="1742858799309" duration="4076000" />
     </task>
     <servers />
   </component>
