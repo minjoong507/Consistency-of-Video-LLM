@@ -10,14 +10,10 @@ import numpy as np
 from utils.cons_utils import BaseOptions
 from task.grounding import run_grounding
 from task.consistency import run_consistency
-from task.vcg_bench import run_vgc_bench
-from task.misaligned_grounding import run_misaligned_grounding
 
 eval_func = {
     "grounding": run_grounding,
     "consistency": run_consistency,
-    "vcg_bench": run_vgc_bench,
-    "misaligned_grounding": run_misaligned_grounding,
 }
 
 OPT_FILE_NAME = "opt.json"

@@ -231,16 +231,6 @@ class TimeChat:
 
         return chat_state
 
-    def naive_qa(self, video_features, query, chat_state=None, msg=None):
-        if not chat_state:
-            chat_state = self.initialize_chat(task="qa", msg=msg)
-        else:
-            chat_state = chat_state.copy()
-        self.chat.ask(query, chat_state)
-        answer = self.inference(self.chat, chat_state, video_features)
-
-        return answer
-
     def run(self, task, video_features, query, duration, chat_state=None, st=None, ed=None, msg=None, return_chat_state=False):
         question, add_detail, choice = generate_question(task, prompt, query, duration, st, ed)
         if not chat_state:

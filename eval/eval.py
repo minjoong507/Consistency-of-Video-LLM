@@ -182,53 +182,6 @@ def validate_answer(confusion_matrix, qa_pairs, query_type, key, debug=False):
             else:
                 logger.warning(f"failed to judge the '{key}' answer '{answer}'")
 
-
-        # if query_type == prompt_choice == "pos":
-        #     response = _validate_answer(question=question, answer=answer, expected="pos")
-        #     if response == 1:
-        #         confusion_matrix['TP'] += 1
-        #         case = 'TP'
-        #     elif response == 0:
-        #         confusion_matrix['FN'] += 1
-        #         case = 'FN'
-        #     else:
-        #         logger.warning(f"failed to judge the '{key}' answer '{answer}'")
-        #
-        # elif query_type == prompt_choice == "neg":
-        #     response = _validate_answer(question=question, answer=answer, expected="pos")
-        #     if response == 1:
-        #         confusion_matrix['TN'] += 1
-        #         case = 'TN'
-        #     elif response == 0:
-        #         confusion_matrix['FP'] += 1
-        #         case = 'FP'
-        #     else:
-        #         logger.warning(f"failed to judge the '{key}' answer '{answer}'")
-        #
-        # elif query_type == "pos" and prompt_choice == "neg":
-        #     response = _validate_answer(question=question, answer=answer, expected="neg")
-        #     if response == 1:
-        #         confusion_matrix['TP'] += 1
-        #         case = 'TP'
-        #     elif response == 0:
-        #         confusion_matrix['FN'] += 1
-        #         case = 'FN'
-        #     else:
-        #         logger.warning(f"failed to judge the '{key}' answer '{answer}'")
-        #
-        # elif query_type == "neg" and prompt_choice == "pos":
-        #     response = _validate_answer(question=question, answer=answer, expected="neg")
-        #     if response == 1:
-        #         confusion_matrix['TN'] += 1
-        #         case = 'TN'
-        #     elif response == 0:
-        #         confusion_matrix['FP'] += 1
-        #         case = 'FP'
-        #     else:
-        #         logger.warning(f"failed to judge the '{key}' answer '{answer}'")
-        # else:
-        #     raise ValueError("Check the _validate_answer function")
-
         # Update the result
         qa_pair["j"] = case
 
@@ -376,9 +329,6 @@ def evaluate_predictions_for_consistency(results, args, iou_thd=0.5, verbos=Fals
 
     filtered_results = [result for result in results if iou_thd <= result['prediction']['iou']]
     logger.info(f"Applying {iou_thd} iou threshold, the {len(filtered_results)} predictions will be evaluated.")
-
-    # total_rephrased_ious = [result['rephrased']['ious'] for result in results if 'rephrased' in result]
-    # total_shifted_ious = [result['shifted']['iou'] for result in results if 'shifted' in result]
 
     performance_report["org_grounding"] = calculate_r1(org_ious)
     performance_report["shifted_grounding"] = evaluate_grounding_probes(filtered_results, key='shifted', verbos=verbos)
