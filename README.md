@@ -34,7 +34,17 @@ python run.py --model_type TimeChat --dset_name activitynet --task consistency
 You can also use the `--debug` flag before performing the actual evaluation to verify your configuration settings.
 
 ## Training
-For VTune, please download the training annotations for each dataset from Hugging Face. The hyperparameters should be aligned with those specified in Appendix Table 11.
+For VTune, please download the training annotations for each dataset from Hugging Face. The hyperparameters should align with those specified in Appendix Table 11. 
+
+For evaluation, please provide the checkpoints for each dataset using the links below:
+- [Charades-STA](https://huggingface.co/mjjung/TimeChat-7B-Charades-VTune)
+- [ActivityNet-Captions](https://huggingface.co/mjjung/TimeChat-7B-ActivityNet-VTune) 
+
+Then, use the following command:
+```
+python run.py --model_type TimeChat --dset_name activitynet --fine_tuned --task consistency
+```
+Including the `fine_tuned` option will automatically switch the checkpoint path `ckpt` to `activitynet_ckpt` in `timechat/eval_configs/timechat.yaml`.
 
 ## Citation
 If you find our paper useful, please consider citing our paper.
