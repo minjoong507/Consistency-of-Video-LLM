@@ -7,9 +7,10 @@ import random
 import copy
 import numpy as np
 from utils.cons_utils import (save_jsonl, save_json, load_json, get_iou,
-                              BaseOptions, load_logger, shifting_video_moment,
+                              BaseOptions, load_logger,
                               display, load_jsonl)
-from eval.eval import evaluate_predictions_for_consistency, evaluate_grounding
+from eval.eval import evaluate_predictions_for_consistency
+
 logger = load_logger("[Consistency Evaluation]")
 
 OPT_FILE_NAME = "opt.json"

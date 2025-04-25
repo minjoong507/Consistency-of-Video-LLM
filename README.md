@@ -22,15 +22,15 @@ You can download the complete annotations for consistency evaluation from [Huggi
 - [ActivityNet-Captions](https://cs.stanford.edu/people/ranjaykrishna/densevid/)
 
 ## Evaluation
-Before starting the evaluation, make sure you have prepared the annotations and videos. You should also check the configuration of the Video-LLMs. Install the necessary dependencies using conda and pip for your model.
-In this section, we provide an example with the model TimeChat. We will include additional baseline models in the future.
+Before starting the evaluation, make sure you have prepared the annotations and videos. You should also check the configuration of the Video-LLMs. Install the necessary dependencies using conda and pip for your model. Additionally, you may run `utils/shift_video.py` with the right paths to prepare shifted videos.
+Here, we provide an example with the model `TimeChat`. We will include additional baseline models in the future.
 
 To run the evaluation, use the following command:
 
 ```
 python run.py --model_type TimeChat --dset_name activitynet --task consistency
 ````
-`dset_name` refers to the test dataset, which can be either charades or activitynet. `task` refers to the evaluation task: either consistency or grounding. If set to grounding, the evaluation will be performed on the original test set.
+`dset_name` refers to the test dataset, which can be either charades or activitynet. `task` refers to the evaluation task: either `consistency` or `grounding`. If set to `grounding`, the evaluation will be performed on the original test set.
 You can also use the `--debug` flag before performing the actual evaluation to verify your configuration settings.
 
 ## Training

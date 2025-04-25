@@ -79,7 +79,7 @@ def swap_frames(video_path, timestamps, shifted_timestamps, output_dir, vid):
 
 if __name__ == "__main__":
     # Load and process each video from annotations
-    dset_name = "activitynet" # or "charades
+    dset_name = "activitynet" # or charades
     video_root_path = "" # set the right path to your video files
     annotations = load_json(f"data/{dset_name}_consistency_test.json")
     output_dir = f'{video_root_path}/{dset_name}/shifted_videos/'

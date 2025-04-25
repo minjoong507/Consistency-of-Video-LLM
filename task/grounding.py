@@ -62,7 +62,7 @@ def main(args, model):
                 ),
                 prediction=edict(
                     qa=pred_moment,
-                    iou=get_iou(gt_moment, pred_moment),
+                    iou=get_iou(gt_moment, pred_moment["t"]),
                 ),
             )
             results.append(result)
@@ -72,7 +72,6 @@ def main(args, model):
 
         if n_data % 50 == 0:
             logger.info(f"{len(results)} results are saved")
-
             save_jsonl(results, os.path.join(args.output_dir, f"{path_to_predictions}"))
 
     logger.info(f"{len(results)} predictions will be saved at {path_to_predictions}")
