@@ -309,7 +309,7 @@ def evaluate_predictions_for_consistency(results, args, iou_thd=0.5, verbos=Fals
         raise TypeError("Input file must be a list or a string")
 
     if args.debug:
-        logger.info("During debug mode, we change the iou threshold 0.5 to 0 and evaluate a subset of predictions.")
+        logger.info(f"During debug mode, we change the iou threshold {iou_thd} to 0.0 and evaluate a subset of predictions.")
         results = results[:3]
         iou_thd = 0
 
@@ -319,7 +319,6 @@ def evaluate_predictions_for_consistency(results, args, iou_thd=0.5, verbos=Fals
     }
 
     org_ious = [get_iou(result['prediction']['qa']['t'], result['meta']['timestamp']) for result in results]
-
 
     if len(results) != n_test_set[args.dset_name]:
         total_videos = list(set([result['meta']['vid'] for result in results]))
@@ -360,18 +359,18 @@ def evaluate_predictions_for_consistency(results, args, iou_thd=0.5, verbos=Fals
     if args.output_dir:
         save_jsonl(filtered_results, os.path.join(args.output_dir, "predictions_w_judgement.jsonl"))
 
-    # Normalized scores
+    # Absolute scores
     Ground = performance_report['org_grounding']['R@1 IoU=0.5']
     C_Ground = "{:.2f}".format(performance_report['rephrased_grounding']['R@1 IoU=0.5'] * Ground / 100)
     S_Ground = "{:.2f}".format(performance_report['shifted_grounding']['R@1 IoU=0.5'] * Ground / 100)
     H_verif_acc = "{:.2f}".format(performance_report['holistic']['scores']['Accuracy'] * Ground / 100)
     C_verif_acc = "{:.2f}".format(performance_report['compositional']['scores']['Accuracy'] * Ground / 100)
 
-    performance_report["normalized_scores"] = edict(Ground=Ground,
-                                                    C_Ground=C_Ground,
-                                                    S_Ground=S_Ground,
-                                                    H_verif_acc=H_verif_acc,
-                                                    C_verif_acc=C_verif_acc)
+    performance_report["absolute_scores"] = edict(Ground=Ground,
+                                                  C_Ground=C_Ground,
+                                                  S_Ground=S_Ground,
+                                                  H_verif_acc=H_verif_acc,
+                                                  C_verif_acc=C_verif_acc)
 
     return performance_report
 

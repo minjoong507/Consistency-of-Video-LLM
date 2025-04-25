@@ -30,8 +30,11 @@ To run the evaluation, use the following command:
 ```
 python run.py --model_type TimeChat --dset_name activitynet --task consistency
 ````
-`dset_name` refers to the test dataset, which can be either charades or activitynet. `task` refers to the evaluation task: either `consistency` or `grounding`. If set to `grounding`, the evaluation will be performed on the original test set.
+`dset_name` refers to the test dataset, which can be either `charades` or `activitynet`. `task` refers to the evaluation task: either `consistency` or `grounding`. If set to `grounding`, the evaluation will be performed on the original test set.
 You can also use the `--debug` flag before performing the actual evaluation to verify your configuration settings.
+
+Once the evaluation is complete, the performance will be reported in `consistency_eval_results.json`, and you can check the model's output in `consistency_predictions.jsonl`.
+
 
 ## Training
 For VTune, please download the training annotations for each dataset from Hugging Face. The hyperparameters should align with those specified in Appendix Table 11. 
