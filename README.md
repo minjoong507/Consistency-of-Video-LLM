@@ -39,6 +39,8 @@ Once the evaluation is complete, the performance will be reported in `consistenc
 ## Training
 For VTune, please download the training annotations for each dataset from Hugging Face. The hyperparameters should align with those specified in Appendix Table 11. 
 
+**Important**: For VTune for Charades-STA, the hyperparameters `iters_per_epochs` and `Warmup_steps` should be `24811` and `14916`, respectively. Please note that these values differ from those listed in Table 11. We apologize for any inconvenience caused.
+
 For evaluation, please provide the checkpoints for each dataset using the links below:
 - [Charades-STA](https://huggingface.co/mjjung/TimeChat-7B-Charades-VTune)
 - [ActivityNet-Captions](https://huggingface.co/mjjung/TimeChat-7B-ActivityNet-VTune) 
