@@ -361,13 +361,13 @@ def evaluate_predictions_for_consistency(results, args, iou_thd=0.5, verbos=Fals
 
     # Absolute scores
     Ground = performance_report['org_grounding']['R@1 IoU=0.5']
-    C_Ground = "{:.2f}".format(performance_report['rephrased_grounding']['R@1 IoU=0.5'] * Ground / 100)
+    R_Ground = "{:.2f}".format(performance_report['rephrased_grounding']['R@1 IoU=0.5'] * Ground / 100)
     S_Ground = "{:.2f}".format(performance_report['shifted_grounding']['R@1 IoU=0.5'] * Ground / 100)
     H_verif_acc = "{:.2f}".format(performance_report['holistic']['scores']['Accuracy'] * Ground / 100)
     C_verif_acc = "{:.2f}".format(performance_report['compositional']['scores']['Accuracy'] * Ground / 100)
 
     performance_report["absolute_scores"] = edict(Ground=Ground,
-                                                  C_Ground=C_Ground,
+                                                  R_Ground=R_Ground,
                                                   S_Ground=S_Ground,
                                                   H_verif_acc=H_verif_acc,
                                                   C_verif_acc=C_verif_acc)

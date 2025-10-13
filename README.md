@@ -37,9 +37,29 @@ Once the evaluation is complete, the performance will be reported in `consistenc
 
 
 ## Training
-For VTune, please download the training annotations for each dataset from Hugging Face. The hyperparameters should align with those specified in Appendix Table 11. 
 
-For evaluation, please provide the checkpoints for each dataset using the links below:
+For training, please download the training annotations for each dataset from Hugging Face. 
+
+### ⚠️ Important Note
+
+The previously uploaded **VTune** dataset file **`charades_for_VTune.json`** partially includes videos from the **Charades-Con test split**. The updated file **`charades_train_v2.json`** and **`charades_for_VTune_v2.json`** excludes these overlapping videos. The corresponding hyperparameters should follow the table below. Note that neither dataset includes test videos from **Charades-STA** (the original one). We apologize for any inconvenience caused.
+
+| Dataset Name            | iters_per_epochs | warmup_steps |
+|--------------------------|------------------|--------------|
+| `charades_for_VTune`     | 24,811           | 14,916       |
+| `charades_for_VTune2`    | 22,311           | 13,386       |
+
+The performance of TimeChat trained with `charades_for_VTune2`:
+
+| **Method** | **Ground** | **R-Ground** | **S-Ground** | **H-Verify** | **C-Verify** | 
+|:-----------|:----------:|:------------:|:------------:|:------------:|:------------:|
+| SFT        |    47.2    | 43.4 (91.8)  | 15.0 (31.9)  | 24.3 (51.5)  | 24.0 (50.9)  |
+| VTune      |    52.0    | 47.4 (91.2)  | 23.5 (45.2)  | 31.5 (60.5)  | 27.5 (52.9)  |
+
+
+## Checkpoints
+
+We provide the checkpoints for each dataset using the links below:
 - [Charades-STA](https://huggingface.co/mjjung/TimeChat-7B-Charades-VTune)
 - [ActivityNet-Captions](https://huggingface.co/mjjung/TimeChat-7B-ActivityNet-VTune) 
 
@@ -47,16 +67,17 @@ Then, use the following command:
 ```
 python run.py --model_type TimeChat --dset_name activitynet --fine_tuned --task consistency
 ```
-Including the `fine_tuned` option will automatically switch the checkpoint path `ckpt` to `activitynet_ckpt` in `timechat/eval_configs/timechat.yaml`.
+In the above example command, including the `fine_tuned` option will automatically switch the checkpoint path `ckpt` to `activitynet_ckpt` in `timechat/eval_configs/timechat.yaml`.
 
 ## Citation
 If you find our paper useful, please consider citing our paper.
 ```BibTeX
-@article{jung2024consistency,
-  title={On the Consistency of Video Large Language Models in Temporal Comprehension},
+@inproceedings{jung2025consistency,
+  title={On the consistency of video large language models in temporal comprehension},
   author={Jung, Minjoon and Xiao, Junbin and Zhang, Byoung-Tak and Yao, Angela},
-  journal={arXiv preprint arXiv:2411.12951},
-  year={2024}
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={13713--13722},
+  year={2025}
 }
 ```
 ## Acknowledgement
