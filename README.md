@@ -42,7 +42,10 @@ For training, please download the training annotations for each dataset from Hug
 
 ### ⚠️ Important Note
 
-The previously uploaded **VTune** dataset file **`charades_for_VTune.json`** partially includes videos from the **Charades-Con test split**. The updated file **`charades_train_v2.json`** and **`charades_for_VTune_v2.json`** excludes these overlapping videos. The corresponding hyperparameters should follow the table below. Note that neither dataset includes test videos from **Charades-STA** (the original one). We apologize for any inconvenience caused.
+The previously uploaded **VTune** dataset file `charades_for_VTune.json` partially includes videos from the Charades-Con test split. 
+The updated file `charades_train_v2.json` and `charades_for_VTune_v2.json` excludes these overlapping videos. 
+The corresponding hyperparameters should follow the table below. Note that neither dataset includes test videos from Charades-STA (the original one). 
+We apologize for any inconvenience caused.
 
 | Dataset Name            | iters_per_epochs | warmup_steps |
 |--------------------------|------------------|--------------|
